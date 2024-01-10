@@ -10,12 +10,6 @@ export class ResourceGuruApi implements ICredentialType {
 	documentationUrl = 'httpRequest';
 
 	properties: INodeProperties[] = [
-		// {
-		// 	displayName: 'Redirect URL',
-		// 	name: 'redirectUrl',
-		// 	type: 'string',
-		// 	default: 'http://localhost:5678/rest/oauth2-credential/callback',
-		// },
 		{
 			displayName: 'Account ID',
 			name: 'accountId',

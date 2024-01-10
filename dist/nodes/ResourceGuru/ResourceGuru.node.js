@@ -23,7 +23,7 @@ class ResourceGuru {
                 },
             ],
             requestDefaults: {
-                baseURL: 'https://api.resourceguruapp.com/v1/={{$credentials.accountId}}',
+                baseURL: 'https://api.resourceguruapp.com',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ class ResourceGuru {
                             routing: {
                                 request: {
                                     method: 'GET',
-                                    url: '/projects',
+                                    url: '/v1/={{$credentials.accountId}}/projects',
                                 },
                             },
                         },
