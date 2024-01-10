@@ -80,8 +80,8 @@ export class ResourceGuru implements INodeType {
 						description: 'Projects',
 						routing: {
 							request: {
-								method: 'PATCH',
-								// url: '={{"/projects/" + $parameter["projectId"]}}',
+								method: 'PUT',
+								url: '/projects/={{$parameter["projectId"]}}'
 							},
 						},
 					},
@@ -103,11 +103,11 @@ export class ResourceGuru implements INodeType {
 					},
 				},
 				default: '',
-				routing: {
-					request: {
-						url: '/projects/={{$value}}',
-					},
-				},
+				// routing: {
+				// 	request: {
+				// 		url: '/projects/={{$value}}',
+				// 	},
+				// },
 			},
 			//
 		//
