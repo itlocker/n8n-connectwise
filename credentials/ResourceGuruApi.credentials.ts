@@ -11,6 +11,12 @@ export class ResourceGuruApi implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
+			displayName: 'Test',
+			name: 'test',
+			type: 'string',
+			default: '=/v1/{{credentials.accountId}}/projects',
+		},
+		{
 			displayName: 'Account ID',
 			name: 'accountId',
 			type: 'string',
