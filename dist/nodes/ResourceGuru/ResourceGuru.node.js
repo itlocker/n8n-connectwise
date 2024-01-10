@@ -40,11 +40,11 @@ class ResourceGuru {
                     noDataExpression: true,
                     options: [
                         {
-                            name: 'Get All Projects',
-                            value: 'getAllProjects',
+                            name: 'Projects',
+                            value: 'projects',
                         },
                     ],
-                    default: 'getAllProjects',
+                    default: 'projects',
                 },
                 {
                     displayName: 'Operation',
@@ -54,7 +54,7 @@ class ResourceGuru {
                     displayOptions: {
                         show: {
                             resource: [
-                                'getAllProjects',
+                                'projects',
                             ],
                         },
                     },
@@ -62,8 +62,8 @@ class ResourceGuru {
                         {
                             name: 'Get',
                             value: 'get',
-                            action: 'Get All Projects',
-                            description: 'Get all projects',
+                            action: 'projects',
+                            description: 'Projects',
                             routing: {
                                 request: {
                                     method: 'GET',
