@@ -78,8 +78,7 @@ class ResourceGuru {
                             description: 'Projects',
                             routing: {
                                 request: {
-                                    method: 'PUT',
-                                    url: '={{"/projects/" + $parameter["projectId"]}}',
+                                    method: 'PATCH',
                                 },
                             },
                         },
@@ -100,7 +99,9 @@ class ResourceGuru {
                     },
                     default: '',
                     routing: {
-                        request: {},
+                        request: {
+                            url: '/projects/={{$value}}',
+                        },
                     },
                 },
             ]
