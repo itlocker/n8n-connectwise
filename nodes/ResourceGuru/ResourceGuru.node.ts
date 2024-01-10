@@ -91,39 +91,24 @@ export class ResourceGuru implements INodeType {
 
 			// Optional/additional fields will go here
 			{
-				displayName: 'Additional Fields',
-				name: 'additionalFields',
-				type: 'collection',
-				default: {},
-				placeholder: 'Add Field',
+				displayName: 'Project ID',
+				name: 'projectId',
+				type: 'string',
+				required: true,
+				placeholder: 'Project ID',
 				displayOptions: {
 					show: {
-						resource: [
-							'projects',
-						],
-						operation: [
-							'update',
-						],
+						resource: ['projects'],
+						operation: ['update'],
 					},
 				},
-				options: [
-					{
-						displayName: 'Project Id',
-						name: 'projectId',
-						type: 'string',
-						default: '',
-						required: true,
-						// routing: {
-						// 	request: {
-						// 		// You've already set up the URL. qs appends the value of the field as a query string
-						// 		qs: {
-						// 			date: '={{ new Date($value).toISOString().substr(0,10) }}',
-						// 		},
-						// 	},
-						// },
+				default: '',
+				routing: {
+					request: {
+						// url: '/projects/={{$value}}',
 					},
-				],
-			}
+				},
+			},
 			//
 		//
 		]

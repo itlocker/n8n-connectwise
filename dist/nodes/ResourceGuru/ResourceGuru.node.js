@@ -87,31 +87,22 @@ class ResourceGuru {
                     default: 'get',
                 },
                 {
-                    displayName: 'Additional Fields',
-                    name: 'additionalFields',
-                    type: 'collection',
-                    default: {},
-                    placeholder: 'Add Field',
+                    displayName: 'Project ID',
+                    name: 'projectId',
+                    type: 'string',
+                    required: true,
+                    placeholder: 'Project ID',
                     displayOptions: {
                         show: {
-                            resource: [
-                                'projects',
-                            ],
-                            operation: [
-                                'update',
-                            ],
+                            resource: ['projects'],
+                            operation: ['update'],
                         },
                     },
-                    options: [
-                        {
-                            displayName: 'Project Id',
-                            name: 'projectId',
-                            type: 'string',
-                            default: '',
-                            required: true,
-                        },
-                    ],
-                }
+                    default: '',
+                    routing: {
+                        request: {},
+                    },
+                },
             ]
         };
     }
