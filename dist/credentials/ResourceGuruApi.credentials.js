@@ -5,41 +5,14 @@ class ResourceGuruApi {
     constructor() {
         this.name = 'ResourceGuruApi';
         this.displayName = 'Resource Guru API';
+        this.extends = ['oAuth2Api'];
         this.documentationUrl = 'httpRequest';
-        this.genericAuth = true;
         this.properties = [
             {
-                displayName: 'Redirect URL',
-                name: 'redirectUrl',
-                type: 'string',
-                default: 'http://localhost:5678/rest/oauth2-credential/callback',
-            },
-            {
                 displayName: 'Grant Type',
                 name: 'grantType',
                 type: 'hidden',
-                default: 'password',
-            },
-            {
-                displayName: 'Username',
-                name: 'username',
-                type: 'string',
-                default: '',
-            },
-            {
-                displayName: 'Password',
-                name: 'password',
-                type: 'string',
-                typeOptions: {
-                    password: true,
-                },
-                default: '',
-            },
-            {
-                displayName: 'Grant Type',
-                name: 'grantType',
-                type: 'hidden',
-                default: 'password',
+                default: 'authorizationCode',
             },
             {
                 displayName: 'Authorization URL',

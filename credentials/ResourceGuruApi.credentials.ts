@@ -5,43 +5,22 @@ export class ResourceGuruApi implements ICredentialType {
 
 	displayName = 'Resource Guru API';
 
+	extends = ['oAuth2Api'];
+
 	documentationUrl = 'httpRequest';
 
-	genericAuth = true;
-
 	properties: INodeProperties[] = [
-		{
-			displayName: 'Redirect URL',
-			name: 'redirectUrl',
-			type: 'string',
-			default: 'http://localhost:5678/rest/oauth2-credential/callback',
-		},
-		{
-			displayName: 'Grant Type',
-			name: 'grantType',
-			type: 'hidden',
-			default: 'password',
-		},
-		{
-			displayName: 'Username',
-			name: 'username',
-			type: 'string',
-			default: '',
-		},
-		{
-			displayName: 'Password',
-			name: 'password',
-			type: 'string',
-			typeOptions: {
-				password: true,
-			},
-			default: '',
-		},
+		// {
+		// 	displayName: 'Redirect URL',
+		// 	name: 'redirectUrl',
+		// 	type: 'string',
+		// 	default: 'http://localhost:5678/rest/oauth2-credential/callback',
+		// },
 		{
 			displayName: 'Grant Type',
 			name: 'grantType',
 			type: 'hidden',
-			default: 'password',
+			default: 'authorizationCode',
 		},
 		{
 			displayName: 'Authorization URL',
