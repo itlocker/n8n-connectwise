@@ -9,42 +9,29 @@ class ResourceGuruApi {
         this.genericAuth = true;
         this.properties = [
             {
+                displayName: 'Redirect URL',
+                name: 'redirectUrl',
+                type: 'string',
+                default: 'http://localhost:5678/rest/oauth2-credential/callback',
+            },
+            {
                 displayName: 'Grant Type',
                 name: 'grantType',
-                type: 'options',
-                options: [
-                    {
-                        name: 'Authorization Code',
-                        value: 'authorizationCode',
-                    },
-                    {
-                        name: 'Client Credentials',
-                        value: 'clientCredentials',
-                    },
-                    {
-                        name: 'PKCE',
-                        value: 'pkce',
-                    },
-                ],
+                type: 'hidden',
                 default: 'authorizationCode',
             },
             {
                 displayName: 'Authorization URL',
                 name: 'authUrl',
                 type: 'string',
-                displayOptions: {
-                    show: {
-                        grantType: ['authorizationCode', 'pkce'],
-                    },
-                },
-                default: '',
+                default: '/oauth/authorize',
                 required: true,
             },
             {
                 displayName: 'Access Token URL',
                 name: 'accessTokenUrl',
                 type: 'string',
-                default: '',
+                default: '/oauth/token',
                 required: true,
             },
             {
@@ -67,13 +54,13 @@ class ResourceGuruApi {
             {
                 displayName: 'Scope',
                 name: 'scope',
-                type: 'string',
+                type: 'hidden',
                 default: '',
             },
             {
                 displayName: 'Auth URI Query Parameters',
                 name: 'authQueryParameters',
-                type: 'string',
+                type: 'hidden',
                 displayOptions: {
                     show: {
                         grantType: ['authorizationCode', 'pkce'],
@@ -86,26 +73,14 @@ class ResourceGuruApi {
             {
                 displayName: 'Authentication',
                 name: 'authentication',
-                type: 'options',
-                options: [
-                    {
-                        name: 'Body',
-                        value: 'body',
-                        description: 'Send credentials in body',
-                    },
-                    {
-                        name: 'Header',
-                        value: 'header',
-                        description: 'Send credentials as Basic Auth header',
-                    },
-                ],
+                type: 'hidden',
                 default: 'header',
             },
             {
                 displayName: 'Ignore SSL Issues',
                 name: 'ignoreSSLIssues',
                 type: 'boolean',
-                default: false,
+                default: true,
             },
         ];
     }
