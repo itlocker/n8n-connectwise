@@ -23,15 +23,15 @@ class ResourceGuruApi {
             {
                 displayName: 'Authorization URL',
                 name: 'authUrl',
-                type: 'string',
-                default: '/oauth/authorize',
+                type: 'hidden',
+                default: 'https://api.resourceguruapp.com/oauth/authorize',
                 required: true,
             },
             {
                 displayName: 'Access Token URL',
                 name: 'accessTokenUrl',
-                type: 'string',
-                default: '/oauth/token',
+                type: 'hidden',
+                default: 'https://api.resourceguruapp.com/oauth/token',
                 required: true,
             },
             {
