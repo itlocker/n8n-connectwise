@@ -24,6 +24,12 @@ export class ResourceGuruApi implements ICredentialType {
 			default: 'authorizationCode',
 		},
 		{
+			displayName: 'URL Test',
+			name: 'urlTest',
+			type: 'string',
+			default: '/v1/={{$credentials.accountId}}/projects',
+		},
+		{
 			displayName: 'Authorization URL',
 			name: 'authUrl',
 			type: 'hidden',
