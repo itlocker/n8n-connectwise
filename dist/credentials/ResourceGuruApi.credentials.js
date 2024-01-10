@@ -18,7 +18,28 @@ class ResourceGuruApi {
                 displayName: 'Grant Type',
                 name: 'grantType',
                 type: 'hidden',
-                default: 'authorizationCode',
+                default: 'password',
+            },
+            {
+                displayName: 'Username',
+                name: 'username',
+                type: 'string',
+                default: '',
+            },
+            {
+                displayName: 'Password',
+                name: 'password',
+                type: 'string',
+                typeOptions: {
+                    password: true,
+                },
+                default: '',
+            },
+            {
+                displayName: 'Grant Type',
+                name: 'grantType',
+                type: 'hidden',
+                default: 'password',
             },
             {
                 displayName: 'Authorization URL',
