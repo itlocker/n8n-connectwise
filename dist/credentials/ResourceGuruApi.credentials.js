@@ -9,12 +9,6 @@ class ResourceGuruApi {
         this.documentationUrl = 'httpRequest';
         this.properties = [
             {
-                displayName: 'Test',
-                name: 'test',
-                type: 'string',
-                default: '=/v1/{{credentials.accountId}}/projects',
-            },
-            {
                 displayName: 'Account ID',
                 name: 'accountId',
                 type: 'string',

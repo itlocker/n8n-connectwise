@@ -22,7 +22,7 @@ export class ResourceGuru implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://api.resourceguruapp.com',
+			baseURL: `={{"https://api.resourceguruapp.com/v1/" + $credentials["accountId"]}}`,
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export class ResourceGuru implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '/v1/matrixit/projects',
+								url: '/projects',
 							},
 						},
 					},
@@ -75,6 +75,7 @@ export class ResourceGuru implements INodeType {
 			},
 
 			// Optional/additional fields will go here
+
 			//
 		//
 		]
