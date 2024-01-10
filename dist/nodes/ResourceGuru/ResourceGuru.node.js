@@ -71,9 +71,47 @@ class ResourceGuru {
                                 },
                             },
                         },
+                        {
+                            name: 'Update',
+                            value: 'update',
+                            action: 'projects',
+                            description: 'Projects',
+                            routing: {
+                                request: {
+                                    method: 'PUT',
+                                    url: '={{"/projects/" + $parameter["projectId"]}}',
+                                },
+                            },
+                        },
                     ],
                     default: 'get',
                 },
+                {
+                    displayName: 'Additional Fields',
+                    name: 'additionalFields',
+                    type: 'collection',
+                    default: {},
+                    placeholder: 'Add Field',
+                    displayOptions: {
+                        show: {
+                            resource: [
+                                'projects',
+                            ],
+                            operation: [
+                                'update',
+                            ],
+                        },
+                    },
+                    options: [
+                        {
+                            displayName: 'Project Id',
+                            name: 'projectId',
+                            type: 'string',
+                            default: '',
+                            required: true,
+                        },
+                    ],
+                }
             ]
         };
     }
