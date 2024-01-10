@@ -64,7 +64,7 @@ class ResourceGuru {
                             routing: {
                                 request: {
                                     method: 'GET',
-                                    url: '/v1/={{$credentials.accountId}}/projects',
+                                    url: '/v1/matrixit/projects',
                                 },
                             },
                         },
