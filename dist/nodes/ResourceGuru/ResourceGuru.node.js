@@ -28,6 +28,9 @@ class ResourceGuru {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                 },
+                qs: {
+                    limit: 0
+                }
             },
             properties: [
                 {
