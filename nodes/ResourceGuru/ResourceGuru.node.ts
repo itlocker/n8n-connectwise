@@ -67,9 +67,18 @@ export class ResourceGuru implements INodeType {
 							request: {
 								method: 'GET',
 								url: '/v1/matrixit/projects',
-								qs: {
-									limit: 0,
-								}
+							},
+						},
+					},
+					{
+						name: 'Get 2',
+						value: 'get2',
+						action: 'Get All Projects 2',
+						description: 'Get all projects 2',
+						routing: {
+							request: {
+								method: 'GET',
+								url: 'https://api.resourceguruapp.com/v1/matrixit/projects',
 							},
 						},
 					},
