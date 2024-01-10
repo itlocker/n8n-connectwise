@@ -9,6 +9,13 @@ class ResourceGuruApi {
         this.documentationUrl = 'httpRequest';
         this.properties = [
             {
+                displayName: 'Account ID',
+                name: 'accountId',
+                type: 'string',
+                default: '',
+                required: true,
+            },
+            {
                 displayName: 'Grant Type',
                 name: 'grantType',
                 type: 'hidden',

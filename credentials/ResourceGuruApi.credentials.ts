@@ -17,6 +17,13 @@ export class ResourceGuruApi implements ICredentialType {
 		// 	default: 'http://localhost:5678/rest/oauth2-credential/callback',
 		// },
 		{
+			displayName: 'Account ID',
+			name: 'accountId',
+			type: 'string',
+			default: '',
+			required: true,
+		},
+		{
 			displayName: 'Grant Type',
 			name: 'grantType',
 			type: 'hidden',
