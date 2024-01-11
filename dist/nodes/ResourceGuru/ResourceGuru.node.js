@@ -58,14 +58,26 @@ class ResourceGuru {
                     },
                     options: [
                         {
-                            name: 'Get',
-                            value: 'get',
-                            action: 'get all projects',
-                            description: 'Get all Projects',
+                            name: 'Get Active',
+                            value: 'getActive',
+                            action: 'get active projects',
+                            description: 'Get Active Projects',
                             routing: {
                                 request: {
                                     method: 'GET',
                                     url: '/projects',
+                                },
+                            },
+                        },
+                        {
+                            name: 'Get Archived',
+                            value: 'getArchived',
+                            action: 'get archived projects',
+                            description: 'Get Archived Projects',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/projects/archived',
                                 },
                             },
                         },
