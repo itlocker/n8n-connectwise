@@ -29,8 +29,8 @@ class ResourceGuru {
                     'Content-Type': 'application/json',
                 },
                 qs: {
-                    limit: 0
-                }
+                    limit: 0,
+                },
             },
             properties: [
                 {
@@ -53,9 +53,7 @@ class ResourceGuru {
                     noDataExpression: false,
                     displayOptions: {
                         show: {
-                            resource: [
-                                'projects',
-                            ],
+                            resource: ['projects'],
                         },
                     },
                     options: [
@@ -72,14 +70,50 @@ class ResourceGuru {
                             },
                         },
                         {
-                            name: 'Update',
-                            value: 'update',
+                            name: 'Create',
+                            value: 'create',
+                            action: 'projects',
+                            description: 'Projects',
+                            routing: {
+                                request: {
+                                    method: 'POST',
+                                    url: '/projects',
+                                    body: {
+                                        name: '={{$parameter.name}}',
+                                        project_code: '={{$parameter.projectCode}}',
+                                        client_id: '={{$parameter.clientId}}',
+                                        notes: '={{$parameter.notes}}',
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            name: 'Archive',
+                            value: 'archive',
                             action: 'projects',
                             description: 'Projects',
                             routing: {
                                 request: {
                                     method: 'PUT',
-                                    url: '=/projects/{{$parameter.projectId}}'
+                                    url: '=/projects/{{$parameter.projectId}}',
+                                    body: {
+                                        archived: true,
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            name: 'Unarchive',
+                            value: 'unarchive',
+                            action: 'projects',
+                            description: 'Projects',
+                            routing: {
+                                request: {
+                                    method: 'PUT',
+                                    url: '=/projects/{{$parameter.projectId}}',
+                                    body: {
+                                        archived: false,
+                                    },
                                 },
                             },
                         },
@@ -95,12 +129,68 @@ class ResourceGuru {
                     displayOptions: {
                         show: {
                             resource: ['projects'],
-                            operation: ['update'],
+                            operation: ['archive', 'unarchive'],
                         },
                     },
                     default: '',
                 },
-            ]
+                {
+                    displayName: 'Name',
+                    name: 'name',
+                    type: 'string',
+                    required: true,
+                    placeholder: 'Project Name',
+                    displayOptions: {
+                        show: {
+                            resource: ['projects'],
+                            operation: ['create'],
+                        },
+                    },
+                    default: '',
+                },
+                {
+                    displayName: 'Project Code',
+                    name: 'projectCode',
+                    type: 'string',
+                    required: false,
+                    placeholder: 'Project Code',
+                    displayOptions: {
+                        show: {
+                            resource: ['projects'],
+                            operation: ['create'],
+                        },
+                    },
+                    default: '',
+                },
+                {
+                    displayName: 'Client ID',
+                    name: 'clientId',
+                    type: 'string',
+                    required: true,
+                    placeholder: 'Client ID',
+                    displayOptions: {
+                        show: {
+                            resource: ['projects'],
+                            operation: ['create'],
+                        },
+                    },
+                    default: '',
+                },
+                {
+                    displayName: 'Notes',
+                    name: 'notes',
+                    type: 'string',
+                    required: false,
+                    placeholder: 'Project Notes',
+                    displayOptions: {
+                        show: {
+                            resource: ['projects'],
+                            operation: ['create'],
+                        },
+                    },
+                    default: '',
+                },
+            ],
         };
     }
 }
