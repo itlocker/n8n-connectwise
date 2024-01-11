@@ -74,7 +74,7 @@ export class ResourceGuru implements INodeType {
 					{
 						name: 'Create',
 						value: 'create',
-						action: 'Create a project',
+						action: 'create a project',
 						description: 'Create a Project',
 						routing: {
 							request: {
