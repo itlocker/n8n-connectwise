@@ -72,8 +72,8 @@ class ResourceGuru {
                         {
                             name: 'Create',
                             value: 'create',
-                            action: 'projects',
-                            description: 'Projects',
+                            action: 'Create a project',
+                            description: 'Create a Project',
                             routing: {
                                 request: {
                                     method: 'POST',
@@ -90,8 +90,8 @@ class ResourceGuru {
                         {
                             name: 'Archive',
                             value: 'archive',
-                            action: 'projects',
-                            description: 'Projects',
+                            action: 'archive a project',
+                            description: 'Archive a Project',
                             routing: {
                                 request: {
                                     method: 'PUT',
@@ -105,8 +105,8 @@ class ResourceGuru {
                         {
                             name: 'Unarchive',
                             value: 'unarchive',
-                            action: 'projects',
-                            description: 'Projects',
+                            action: 'unarchive a project',
+                            description: 'Unarchive a Project',
                             routing: {
                                 request: {
                                     method: 'PUT',
