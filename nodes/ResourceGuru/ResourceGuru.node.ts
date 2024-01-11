@@ -44,6 +44,10 @@ export class ResourceGuru implements INodeType {
 						name: 'Projects',
 						value: 'projects',
 					},
+					{
+						name: 'Clients',
+						value: 'clients',
+					},
 				],
 				default: 'projects',
 			},

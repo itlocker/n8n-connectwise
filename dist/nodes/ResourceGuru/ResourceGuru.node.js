@@ -43,6 +43,10 @@ class ResourceGuru {
                             name: 'Projects',
                             value: 'projects',
                         },
+                        {
+                            name: 'Clients',
+                            value: 'clients',
+                        },
                     ],
                     default: 'projects',
                 },
