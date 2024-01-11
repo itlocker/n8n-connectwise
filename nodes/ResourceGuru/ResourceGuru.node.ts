@@ -81,7 +81,7 @@ export class ResourceGuru implements INodeType {
 						routing: {
 							request: {
 								method: 'PUT',
-								url: '/projects/={{$parameter["projectId"]}}'
+								url: '=/projects/{{$parameter.projectId}}'
 							},
 						},
 					},

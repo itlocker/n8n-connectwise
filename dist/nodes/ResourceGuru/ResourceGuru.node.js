@@ -79,7 +79,7 @@ class ResourceGuru {
                             routing: {
                                 request: {
                                     method: 'PUT',
-                                    url: '/projects/={{$parameter["projectId"]}}'
+                                    url: '=/projects/{{$parameter.projectId}}'
                                 },
                             },
                         },
