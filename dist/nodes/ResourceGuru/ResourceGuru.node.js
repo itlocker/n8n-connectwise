@@ -50,7 +50,7 @@ class ResourceGuru {
                     displayName: 'Operation',
                     name: 'operation',
                     type: 'options',
-                    noDataExpression: true,
+                    noDataExpression: false,
                     displayOptions: {
                         show: {
                             resource: [
