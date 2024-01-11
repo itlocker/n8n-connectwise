@@ -60,8 +60,8 @@ class ResourceGuru {
                         {
                             name: 'Get',
                             value: 'get',
-                            action: 'projects',
-                            description: 'Projects',
+                            action: 'get all projects',
+                            description: 'Get all Projects',
                             routing: {
                                 request: {
                                     method: 'GET',
