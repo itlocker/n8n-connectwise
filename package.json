@@ -33,7 +33,7 @@
 			"dist/credentials/ConnectwiseApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/ResourceGuru/Connectwise.node.js"
+			"dist/nodes/Connectwise/Connectwise.node.js"
 		]
 	},
 	"devDependencies": {
