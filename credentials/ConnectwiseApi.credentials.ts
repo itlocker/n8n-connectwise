@@ -59,16 +59,16 @@ export class ConnectwiseApi implements ICredentialType {
 		properties: {
 			// Can be body, header, or qs
 			headers: {
-				authorization: `={{"Basic " + $credentials.apiKey }}`,
-				clientid: `={{$credentials.clientId}}`,
+				authorization: '=Basic {{ $credentials.apiKey }}',
+				clientid: '={{$credentials.clientId}}',
 				'Pagination-Type': 'Forward-Only',
 			},
 		},
 	} as IAuthenticateGeneric;
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: `={{ $credentials.resourceLocation }}+{{ $credentials.domain }}`,
-			url: `="/login/companyinfo/"+{{ $credentials.companyName }}`,
+			baseURL: '={{$credentials.resourceLocation}}{{$credentials.domain}}',
+			url: '="/login/companyinfo/{{ $credentials.companyName }}',
 		},
 	};
 }

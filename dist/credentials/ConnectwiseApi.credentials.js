@@ -51,16 +51,16 @@ class ConnectwiseApi {
             type: 'generic',
             properties: {
                 headers: {
-                    authorization: `={{"Basic " + $credentials.apiKey }}`,
-                    clientid: `={{$credentials.clientId}}`,
+                    authorization: '=Basic {{ $credentials.apiKey }}',
+                    clientid: '={{$credentials.clientId}}',
                     'Pagination-Type': 'Forward-Only',
                 },
             },
         };
         this.test = {
             request: {
-                baseURL: `={{ $credentials.resourceLocation }}+{{ $credentials.domain }}`,
-                url: `="/login/companyinfo/"+{{ $credentials.companyName }}`,
+                baseURL: '={{$credentials.resourceLocation}}{{$credentials.domain}}',
+                url: '="/login/companyinfo/{{ $credentials.companyName }}',
             },
         };
     }
