@@ -12,10 +12,19 @@ export class ConnectwiseApi implements ICredentialType {
 
 	documentationUrl = 'httpRequest';
 
+	domain = 'myconnectwise.net';
+
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Api Key (Base64 Encoded)',
+			displayName: 'API Key (Base64 Encoded)',
 			name: 'apiKey',
+			type: 'string',
+			default: '',
+			required: true,
+		},
+		{
+			displayName: 'Company Name',
+			name: 'companyName',
 			type: 'string',
 			default: '',
 			required: true,
@@ -51,13 +60,15 @@ export class ConnectwiseApi implements ICredentialType {
 			// Can be body, header, or qs
 			headers: {
 				authorization: `={{"Basic " + $credentials.apiKey }}`,
+				clientid: `={{$credentials.clientId}}`,
+				'Pagination-Type': 'Forward-Only',
 			},
 		},
 	} as IAuthenticateGeneric;
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials?.domain}}',
-			url: '/login/companyinfo/connectwise',
+			baseURL: `={{ $credentials.domain }}`,
+			url: `="/login/companyinfo/" + $credentials.companyName`,
 		},
 	};
 }

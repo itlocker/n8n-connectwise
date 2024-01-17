@@ -6,10 +6,18 @@ class ConnectwiseApi {
         this.name = 'ConnectwiseApi';
         this.displayName = 'Connectwise API';
         this.documentationUrl = 'httpRequest';
+        this.domain = 'myconnectwise.net';
         this.properties = [
             {
-                displayName: 'Api Key (Base64 Encoded)',
+                displayName: 'API Key (Base64 Encoded)',
                 name: 'apiKey',
+                type: 'string',
+                default: '',
+                required: true,
+            },
+            {
+                displayName: 'Company Name',
+                name: 'companyName',
                 type: 'string',
                 default: '',
                 required: true,
@@ -44,13 +52,15 @@ class ConnectwiseApi {
             properties: {
                 headers: {
                     authorization: `={{"Basic " + $credentials.apiKey }}`,
+                    clientid: `={{$credentials.clientId}}`,
+                    'Pagination-Type': 'Forward-Only',
                 },
             },
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials?.domain}}',
-                url: '/login/companyinfo/connectwise',
+                baseURL: `={{ $credentials.domain }}`,
+                url: `="/login/companyinfo/" + $credentials.companyName`,
             },
         };
     }
