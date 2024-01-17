@@ -37,6 +37,14 @@ export class ConnectwiseApi implements ICredentialType {
 			required: true,
 		},
 		{
+			displayName: 'Domain',
+			name: 'domain',
+			type: 'string',
+			default:
+				'={{$credentials.resourceLocation}}{{$credentials.domain}}/login/companyinfo/{{ $credentials.companyName }}',
+			required: true,
+		},
+		{
 			displayName: 'Resource Location',
 			name: 'resourceLocation',
 			type: 'options',
@@ -68,7 +76,7 @@ export class ConnectwiseApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: '={{$credentials.resourceLocation}}{{$credentials.domain}}',
-			url: '="/login/companyinfo/{{ $credentials.companyName }}',
+			url: '=/login/companyinfo/{{ $credentials.companyName }}',
 		},
 	};
 }
