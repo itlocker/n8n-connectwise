@@ -32,7 +32,7 @@ class ConnectwiseApi {
             {
                 displayName: 'Domain',
                 name: 'domain',
-                type: 'string',
+                type: 'hidden',
                 default: '={{$credentials.resourceLocation}}{{$credentials.domain}}/login/companyinfo/{{ $credentials.companyName }}',
                 required: true,
             },
