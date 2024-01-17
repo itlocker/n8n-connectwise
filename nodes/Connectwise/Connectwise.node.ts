@@ -1,34 +1,31 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
-export class ResourceGuru implements INodeType {
+export class Connectwise implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
-		displayName: 'Resource Guru',
-		name: 'ResourceGuru',
-		icon: 'file:resourceguru.svg',
+		displayName: 'Connectwise',
+		name: 'Connectwise',
+		icon: 'file:connectwise.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Get and Set information in Resource Guru',
+		description: 'Get and Set information in Connectwise',
 		defaults: {
-			name: 'Resource Guru',
+			name: 'Connectwise',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'ResourceGuruApi',
+				name: 'ConnectwiseApi',
 				required: true,
 			},
 		],
 		requestDefaults: {
-			baseURL: `={{"https://api.resourceguruapp.com/v1/" + $credentials["accountId"]}}`,
+			baseURL: `={{"https://" + $credentials.resouceLocation + "myconnectwise.net/" }}`,
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-			},
-			qs: {
-				limit: 0,
 			},
 		},
 		//
