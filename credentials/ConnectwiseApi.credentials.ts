@@ -67,8 +67,8 @@ export class ConnectwiseApi implements ICredentialType {
 	} as IAuthenticateGeneric;
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: `={{ $credentials.domain }}`,
-			url: `="/login/companyinfo/" + $credentials.companyName`,
+			baseURL: `={{ $credentials.resourceLocation }}+{{ $credentials.domain }}`,
+			url: `="/login/companyinfo/"+{{ $credentials.companyName }}`,
 		},
 	};
 }
