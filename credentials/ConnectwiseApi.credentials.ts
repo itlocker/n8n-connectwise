@@ -21,6 +21,13 @@ export class ConnectwiseApi implements ICredentialType {
 			required: true,
 		},
 		{
+			displayName: 'Client Id',
+			name: 'clientId',
+			type: 'string',
+			default: '',
+			required: true,
+		},
+		{
 			displayName: 'Resource Location',
 			name: 'resourceLocation',
 			type: 'options',
