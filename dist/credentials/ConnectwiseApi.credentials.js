@@ -65,7 +65,7 @@ class ConnectwiseApi {
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials.test + "myconnectwise.net"}}',
+                baseURL: '={{$credentials.datacentre + "myconnectwise.net"}}',
                 url: '={{"/login/companyinfo/"+$credentials.companyName}}',
             },
         };

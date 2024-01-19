@@ -23,7 +23,7 @@ class Connectwise {
                 },
             ],
             requestDefaults: {
-                baseURL: '={{"https://"+$credentials.test+"myconnectwise.net"}}',
+                baseURL: '={{"https://"+$credentials.datacentre+"myconnectwise.net"}}',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
