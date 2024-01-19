@@ -40,6 +40,10 @@ class Connectwise {
                             name: 'My Company',
                             value: 'myCompany',
                         },
+                        {
+                            name: 'Companies',
+                            value: 'companies',
+                        },
                     ],
                     default: 'myCompany',
                 },
@@ -50,7 +54,7 @@ class Connectwise {
                     noDataExpression: false,
                     displayOptions: {
                         show: {
-                            resource: ['myComapny'],
+                            resource: ['myCompany'],
                         },
                     },
                     options: [
@@ -63,6 +67,32 @@ class Connectwise {
                                 request: {
                                     method: 'GET',
                                     url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
+                                },
+                            },
+                        },
+                    ],
+                    default: 'get',
+                },
+                {
+                    displayName: 'Operation',
+                    name: 'operation',
+                    type: 'options',
+                    noDataExpression: false,
+                    displayOptions: {
+                        show: {
+                            resource: ['companies'],
+                        },
+                    },
+                    options: [
+                        {
+                            name: 'Get All Companies',
+                            value: 'getAllCompanies',
+                            action: 'get all companies',
+                            description: 'Get all companies',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/v4_6_release/apis/3.0/company/companies',
                                 },
                             },
                         },
