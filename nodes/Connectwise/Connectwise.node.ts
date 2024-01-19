@@ -42,7 +42,7 @@ export class Connectwise implements INodeType {
 						value: 'companies',
 					},
 				],
-				default: 'myCompany',
+				default: 'companies',
 			},
 			// Operations will go here
 			// Projects

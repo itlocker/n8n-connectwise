@@ -41,7 +41,7 @@ class Connectwise {
                             value: 'companies',
                         },
                     ],
-                    default: 'myCompany',
+                    default: 'companies',
                 },
                 {
                     displayName: 'Operation',
