@@ -35,13 +35,6 @@ export class ConnectwiseApi implements ICredentialType {
 			required: true,
 		},
 		{
-			displayName: 'Test',
-			name: 'test',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
 			displayName: 'Datacentre',
 			name: 'datacentre',
 			type: 'options',

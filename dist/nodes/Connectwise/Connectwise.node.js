@@ -23,7 +23,7 @@ class Connectwise {
                 },
             ],
             requestDefaults: {
-                baseURL: '={{"https://"+$credentials.datacentre+"myconnectwise.net"}}',
+                baseURL: '={{"https://"+$credentials.datacentre+"myconnectwise.net/v4_6_release/apis/3.0"}}',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -37,41 +37,11 @@ class Connectwise {
                     noDataExpression: true,
                     options: [
                         {
-                            name: 'My Company',
-                            value: 'myCompany',
-                        },
-                        {
                             name: 'Companies',
                             value: 'companies',
                         },
                     ],
                     default: 'myCompany',
-                },
-                {
-                    displayName: 'Operation',
-                    name: 'operation',
-                    type: 'options',
-                    noDataExpression: false,
-                    displayOptions: {
-                        show: {
-                            resource: ['myCompany'],
-                        },
-                    },
-                    options: [
-                        {
-                            name: 'Get Info',
-                            value: 'getInfo',
-                            action: 'get company information',
-                            description: 'Get company information',
-                            routing: {
-                                request: {
-                                    method: 'GET',
-                                    url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
-                                },
-                            },
-                        },
-                    ],
-                    default: 'get',
                 },
                 {
                     displayName: 'Operation',
@@ -92,26 +62,68 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'GET',
-                                    url: '/v4_6_release/apis/3.0/company/companies',
+                                    url: '/company/companies',
                                 },
                             },
                         },
                     ],
-                    default: 'get',
+                    default: 'getAllCompanies',
                 },
                 {
-                    displayName: 'Project ID',
-                    name: 'projectId',
+                    displayName: 'Conditions',
+                    name: 'conditions',
                     type: 'string',
-                    required: true,
-                    placeholder: 'Project ID',
+                    required: false,
+                    placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['projects'],
-                            operation: ['archive', 'unarchive'],
+                            resource: ['companies'],
+                            operation: ['getAllCompanies'],
                         },
                     },
                     default: '',
+                },
+                {
+                    displayName: 'Fields',
+                    name: 'fields',
+                    type: 'string',
+                    required: false,
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
+                            resource: ['companies'],
+                            operation: ['getAllCompanies'],
+                        },
+                    },
+                    default: '',
+                },
+                {
+                    displayName: 'Page Id',
+                    name: 'pageId',
+                    type: 'number',
+                    required: false,
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
+                            resource: ['companies'],
+                            operation: ['getAllCompanies'],
+                        },
+                    },
+                    default: '0',
+                },
+                {
+                    displayName: 'Page Size',
+                    name: 'pageSize',
+                    type: 'number',
+                    required: false,
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
+                            resource: ['companies'],
+                            operation: ['getAllCompanies'],
+                        },
+                    },
+                    default: '1000',
                 },
             ],
         };
