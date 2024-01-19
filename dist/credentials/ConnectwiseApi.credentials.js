@@ -6,7 +6,6 @@ class ConnectwiseApi {
         this.name = 'ConnectwiseApi';
         this.displayName = 'Connectwise API';
         this.documentationUrl = 'httpRequest';
-        this.domain = 'myconnectwise.net';
         this.properties = [
             {
                 displayName: 'API Key (Base64 Encoded)',
@@ -66,7 +65,7 @@ class ConnectwiseApi {
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials.test + $credentials.domain}}',
+                baseURL: '={{$credentials.test + "myconnectwise.net"}}',
                 url: '={{"/login/companyinfo/"+$credentials.companyName}}',
             },
         };
