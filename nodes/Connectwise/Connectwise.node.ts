@@ -58,9 +58,9 @@ export class Connectwise implements INodeType {
 				},
 				options: [
 					{
-						name: 'Get All Companies',
-						value: 'getAllCompanies',
-						action: 'get all companies',
+						name: 'Get',
+						value: 'get',
+						action: 'get',
 						description: 'Get all companies',
 						routing: {
 							request: {
@@ -70,7 +70,7 @@ export class Connectwise implements INodeType {
 						},
 					},
 				],
-				default: 'getAllCompanies',
+				default: 'get',
 			},
 
 			// Optional/additional fields will go here
@@ -83,7 +83,7 @@ export class Connectwise implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['companies'],
-						operation: ['getAllCompanies'],
+						operation: ['get'],
 					},
 				},
 				routing: {
@@ -105,7 +105,7 @@ export class Connectwise implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['companies'],
-						operation: ['getAllCompanies'],
+						operation: ['get'],
 					},
 				},
 				routing: {
@@ -127,7 +127,7 @@ export class Connectwise implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['companies'],
-						operation: ['getAllCompanies'],
+						operation: ['get'],
 					},
 				},
 				routing: {
@@ -149,7 +149,7 @@ export class Connectwise implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['companies'],
-						operation: ['getAllCompanies'],
+						operation: ['get'],
 					},
 				},
 				routing: {
