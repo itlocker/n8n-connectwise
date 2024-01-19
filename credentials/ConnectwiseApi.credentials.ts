@@ -41,7 +41,7 @@ export class ConnectwiseApi implements ICredentialType {
 			name: 'domain',
 			type: 'hidden',
 			default:
-				'={{$credentials.resourceLocation}}{{$credentials.domain}}/login/companyinfo/{{ $credentials.companyName }}',
+				'={{$credentials.resourceLocation + $credentials.domain}} + "/login/companyinfo/" + $credentials.companyName }}',
 			required: true,
 		},
 		{
@@ -62,21 +62,27 @@ export class ConnectwiseApi implements ICredentialType {
 			description: 'Resource Location',
 		},
 	];
-	authenticate = {
+
+	// This allows the credential to be used by other parts of n8n
+	// stating how this credential is injected as part of the request
+	// An example is the Http Request node that can make generic calls
+	// reusing this credential
+	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
 		properties: {
-			// Can be body, header, or qs
 			headers: {
-				authorization: '=Basic {{ $credentials.apiKey }}',
+				authorization: '={{"Basic " + $credentials.apiKey }}',
 				clientid: '={{$credentials.clientId}}',
 				'Pagination-Type': 'Forward-Only',
 			},
 		},
-	} as IAuthenticateGeneric;
+	};
+
+	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.resourceLocation}}{{$credentials.domain}}',
-			url: '=/login/companyinfo/{{ $credentials.companyName }}',
+			baseURL: '={{$credentials.resourceLocation + $credentials.domain}}',
+			url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
 		},
 	};
 }

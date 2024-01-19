@@ -33,7 +33,7 @@ class ConnectwiseApi {
                 displayName: 'Domain',
                 name: 'domain',
                 type: 'hidden',
-                default: '={{$credentials.resourceLocation}}{{$credentials.domain}}/login/companyinfo/{{ $credentials.companyName }}',
+                default: '={{$credentials.resourceLocation + $credentials.domain}} + "/login/companyinfo/" + $credentials.companyName }}',
                 required: true,
             },
             {
@@ -58,7 +58,7 @@ class ConnectwiseApi {
             type: 'generic',
             properties: {
                 headers: {
-                    authorization: '=Basic {{ $credentials.apiKey }}',
+                    authorization: '={{"Basic " + $credentials.apiKey }}',
                     clientid: '={{$credentials.clientId}}',
                     'Pagination-Type': 'Forward-Only',
                 },
@@ -66,8 +66,8 @@ class ConnectwiseApi {
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials.resourceLocation}}{{$credentials.domain}}',
-                url: '=/login/companyinfo/{{ $credentials.companyName }}',
+                baseURL: '={{$credentials.resourceLocation + $credentials.domain}}',
+                url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
             },
         };
     }
