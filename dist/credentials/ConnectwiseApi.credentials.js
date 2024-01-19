@@ -58,8 +58,7 @@ class ConnectwiseApi {
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials.datacentre + "myconnectwise.net"}}',
-                url: '={{"/v4_6_release/apis/3.0/company/companies"}}',
+                url: '={{$credentials.datacentre + "myconnectwise.net/v4_6_release/apis/3.0/company/companies"}}',
             },
         };
     }
