@@ -22,7 +22,7 @@ export class Connectwise implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: '={{"https://"+$credentials.resouceLocation+"myconnectwise.net/"',
+			baseURL: '={{"https://"+$credentials.resourceLocation+"myconnectwise.net/"',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
