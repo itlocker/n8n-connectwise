@@ -30,8 +30,15 @@ class ConnectwiseApi {
                 required: true,
             },
             {
-                displayName: 'Resource Location',
-                name: 'resourceLocation',
+                displayName: 'Test',
+                name: 'test',
+                type: 'string',
+                default: '',
+                required: true,
+            },
+            {
+                displayName: 'Datacentre',
+                name: 'datacentre',
                 type: 'options',
                 options: [
                     {
@@ -44,14 +51,14 @@ class ConnectwiseApi {
                     },
                 ],
                 default: 'api-eu.',
-                description: 'Resource Location',
+                description: 'Datacentre',
             },
         ];
         this.authenticate = {
             type: 'generic',
             properties: {
                 headers: {
-                    authorization: '={{"Basic " + $credentials.apiKey }}',
+                    authorization: '={{"Basic " + $credentials.apiKey}}',
                     clientid: '={{$credentials.clientId}}',
                     'Pagination-Type': 'Forward-Only',
                 },
@@ -59,8 +66,8 @@ class ConnectwiseApi {
         };
         this.test = {
             request: {
-                baseURL: '={{$credentials.resourceLocation + $credentials.domain}}',
-                url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
+                baseURL: '={{$credentials.test + $credentials.domain}}',
+                url: '={{"/login/companyinfo/"+$credentials.companyName}}',
             },
         };
     }
