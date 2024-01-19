@@ -30,13 +30,6 @@ class ConnectwiseApi {
                 required: true,
             },
             {
-                displayName: 'Domain',
-                name: 'domain',
-                type: 'hidden',
-                default: '={{$credentials.resourceLocation + $credentials.domain}} + "/login/companyinfo/" + $credentials.companyName }}',
-                required: true,
-            },
-            {
                 displayName: 'Resource Location',
                 name: 'resourceLocation',
                 type: 'options',
