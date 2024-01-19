@@ -73,7 +73,7 @@ export class ConnectwiseApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.datacentre + $credentials.domain}}',
+			baseURL: '={{$credentials.datacentre.value + $credentials.domain}}',
 			url: '={{"/login/companyinfo/"+$credentials.companyName}}',
 		},
 	};
