@@ -81,6 +81,13 @@ class Connectwise {
                             operation: ['getAllCompanies'],
                         },
                     },
+                    routing: {
+                        request: {
+                            qs: {
+                                conditions: '={{ $value }}',
+                            },
+                        },
+                    },
                     default: '',
                 },
                 {
@@ -93,6 +100,13 @@ class Connectwise {
                         show: {
                             resource: ['companies'],
                             operation: ['getAllCompanies'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            qs: {
+                                fields: '={{ $value }}',
+                            },
                         },
                     },
                     default: '',
@@ -109,6 +123,13 @@ class Connectwise {
                             operation: ['getAllCompanies'],
                         },
                     },
+                    routing: {
+                        request: {
+                            qs: {
+                                pageId: '={{ $value }}',
+                            },
+                        },
+                    },
                     default: '0',
                 },
                 {
@@ -121,6 +142,13 @@ class Connectwise {
                         show: {
                             resource: ['companies'],
                             operation: ['getAllCompanies'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            qs: {
+                                pageSize: '={{ $value }}',
+                            },
                         },
                     },
                     default: '1000',

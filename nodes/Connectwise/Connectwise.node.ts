@@ -86,6 +86,14 @@ export class Connectwise implements INodeType {
 						operation: ['getAllCompanies'],
 					},
 				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						qs: {
+							conditions: '={{ $value }}',
+						},
+					},
+				},
 				default: '',
 			},
 			{
@@ -98,6 +106,14 @@ export class Connectwise implements INodeType {
 					show: {
 						resource: ['companies'],
 						operation: ['getAllCompanies'],
+					},
+				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						qs: {
+							fields: '={{ $value }}',
+						},
 					},
 				},
 				default: '',
@@ -114,6 +130,14 @@ export class Connectwise implements INodeType {
 						operation: ['getAllCompanies'],
 					},
 				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						qs: {
+							pageId: '={{ $value }}',
+						},
+					},
+				},
 				default: '0',
 			},
 			{
@@ -126,6 +150,14 @@ export class Connectwise implements INodeType {
 					show: {
 						resource: ['companies'],
 						operation: ['getAllCompanies'],
+					},
+				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						qs: {
+							pageSize: '={{ $value }}',
+						},
 					},
 				},
 				default: '1000',
