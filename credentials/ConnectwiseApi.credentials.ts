@@ -37,8 +37,8 @@ export class ConnectwiseApi implements ICredentialType {
 			required: true,
 		},
 		{
-			displayName: 'Resource Location',
-			name: 'resourceLocation',
+			displayName: 'Datacentre',
+			name: 'datacentre',
 			type: 'options',
 			options: [
 				{
@@ -51,7 +51,7 @@ export class ConnectwiseApi implements ICredentialType {
 				},
 			],
 			default: 'api-eu.', // The initially selected option
-			description: 'Resource Location',
+			description: 'Datacentre',
 		},
 	];
 
@@ -63,7 +63,7 @@ export class ConnectwiseApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				authorization: '={{"Basic " + $credentials.apiKey }}',
+				authorization: '={{"Basic " + $credentials.apiKey}}',
 				clientid: '={{$credentials.clientId}}',
 				'Pagination-Type': 'Forward-Only',
 			},
@@ -73,8 +73,8 @@ export class ConnectwiseApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.resourceLocation + $credentials.domain}}',
-			url: '={{ "/login/companyinfo/" + $credentials.companyName }}',
+			baseURL: '={{$credentials.datacentre + $credentials.domain}}',
+			url: '={{"/login/companyinfo/"+$credentials.companyName}}',
 		},
 	};
 }
