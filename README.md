@@ -4,7 +4,7 @@
 
 This repo contains a node which will provide access to Connectwise PSA.
 
-## Using this starter
+## Using this community node
 
 The Connectwise node implements the following actions &amp; operations:
 
