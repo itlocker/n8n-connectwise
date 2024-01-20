@@ -9,10 +9,10 @@ This repo contains a node which will provide access to Connectwise PSA.
 The Connectwise node implements the following actions &amp; operations:
 
 - Company
-- - Get All Companies
+  - Get All Companies
 - Service Ticket
-- - Get All Service Tickets
-- - Add a Service Ticket Note
+  - Get All Service Tickets
+  - Add a Service Ticket Note
 
 In the case of GET operations, the following optional fields have been implemented:
 
