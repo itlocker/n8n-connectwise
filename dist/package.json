@@ -1,5 +1,5 @@
 {
-    "name": "n8n-nodes-connectwise",
+    "name": "@itlocker/n8n-nodes-connectwise",
     "version": "0.1.0",
     "description": "n8n node - Connectwise",
     "keywords": [
@@ -10,10 +10,6 @@
     "author": {
         "name": "Matt Faulkner",
         "email": "matt@itlocker.co.uk"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/itlocker/n8n-connectwise.git"
     },
     "main": "index.js",
     "scripts": {

@@ -3,14 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConnectwiseApi = void 0;
 class ConnectwiseApi {
     constructor() {
-        this.name = 'ConnectwiseApi';
+        this.name = 'connectwiseApi';
         this.displayName = 'Connectwise API';
-        this.documentationUrl = 'httpRequest';
+        this.documentationUrl = 'https://github.com/itlocker/n8n-connectwise/blob/master/README.md';
         this.properties = [
             {
                 displayName: 'API Key (Base64 Encoded)',
                 name: 'apiKey',
                 type: 'string',
+                typeOptions: {
+                    password: true,
+                },
                 default: '',
                 required: true,
             },

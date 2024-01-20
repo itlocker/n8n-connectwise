@@ -37,31 +37,31 @@ class Connectwise {
                     noDataExpression: true,
                     options: [
                         {
-                            name: 'Companies',
-                            value: 'companies',
+                            name: 'Company',
+                            value: 'company',
                         },
                         {
-                            name: 'Service Ticket Notes',
-                            value: 'serviceTicketNotes',
+                            name: 'Service Ticket Note',
+                            value: 'serviceTicketNote',
                         },
                     ],
-                    default: 'companies',
+                    default: 'company',
                 },
                 {
                     displayName: 'Operation',
                     name: 'operation',
                     type: 'options',
-                    noDataExpression: false,
+                    noDataExpression: true,
                     displayOptions: {
                         show: {
-                            resource: ['companies'],
+                            resource: ['company'],
                         },
                     },
                     options: [
                         {
                             name: 'Get',
                             value: 'get',
-                            action: 'get',
+                            action: 'Get',
                             description: 'Get all companies',
                             routing: {
                                 request: {
@@ -77,7 +77,7 @@ class Connectwise {
                     displayName: 'Operation',
                     name: 'operation',
                     type: 'options',
-                    noDataExpression: false,
+                    noDataExpression: true,
                     displayOptions: {
                         show: {
                             resource: ['serviceTicketNotes'],
@@ -87,7 +87,7 @@ class Connectwise {
                         {
                             name: 'Get',
                             value: 'get',
-                            action: 'get',
+                            action: 'Get',
                             description: 'Get all service ticket notes',
                             routing: {
                                 request: {
@@ -98,7 +98,7 @@ class Connectwise {
                         {
                             name: 'Add',
                             value: 'add',
-                            action: 'add',
+                            action: 'Add',
                             description: 'Add a ticket note',
                             routing: {
                                 request: {
@@ -113,11 +113,10 @@ class Connectwise {
                     displayName: 'Conditions',
                     name: 'conditions',
                     type: 'string',
-                    required: false,
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -134,11 +133,10 @@ class Connectwise {
                     displayName: 'Fields',
                     name: 'fields',
                     type: 'string',
-                    required: false,
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -152,14 +150,13 @@ class Connectwise {
                     default: '',
                 },
                 {
-                    displayName: 'Page Id',
+                    displayName: 'Page ID',
                     name: 'pageId',
                     type: 'number',
-                    required: false,
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -170,17 +167,16 @@ class Connectwise {
                             },
                         },
                     },
-                    default: '0',
+                    default: null,
                 },
                 {
                     displayName: 'Page Size',
                     name: 'pageSize',
                     type: 'number',
-                    required: false,
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -191,10 +187,10 @@ class Connectwise {
                             },
                         },
                     },
-                    default: '1000',
+                    default: 1000,
                 },
                 {
-                    displayName: 'Service Ticket Id',
+                    displayName: 'Service Ticket ID',
                     name: 'serviceTicketId',
                     type: 'number',
                     required: true,
@@ -210,13 +206,13 @@ class Connectwise {
                             url: '=/service/tickets/{{ $value }}/notes',
                         },
                     },
-                    default: '',
+                    default: null,
                 },
                 {
                     displayName: 'Internal Only',
                     name: 'internalFlag',
                     type: 'boolean',
-                    description: 'Only visible for internal users',
+                    description: 'Whether it is visible only to internal users',
                     displayOptions: {
                         show: {
                             resource: ['serviceTicketNotes'],
@@ -240,7 +236,6 @@ class Connectwise {
                     typeOptions: {
                         rows: 4,
                     },
-                    description: 'Description',
                     displayOptions: {
                         show: {
                             resource: ['serviceTicketNotes'],

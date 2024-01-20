@@ -38,15 +38,15 @@ export class Connectwise implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Companies',
-						value: 'companies',
+						name: 'Company',
+						value: 'company',
 					},
 					{
-						name: 'Service Ticket Notes',
-						value: 'serviceTicketNotes',
+						name: 'Service Ticket Note',
+						value: 'serviceTicketNote',
 					},
 				],
-				default: 'companies',
+				default: 'company',
 			},
 
 			// Resource Operations
@@ -55,17 +55,17 @@ export class Connectwise implements INodeType {
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
-				noDataExpression: false,
+				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: ['companies'],
+						resource: ['company'],
 					},
 				},
 				options: [
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'get',
+						action: 'Get',
 						description: 'Get all companies',
 						routing: {
 							request: {
@@ -83,7 +83,7 @@ export class Connectwise implements INodeType {
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
-				noDataExpression: false,
+				noDataExpression: true,
 				displayOptions: {
 					show: {
 						resource: ['serviceTicketNotes'],
@@ -93,7 +93,7 @@ export class Connectwise implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'get',
+						action: 'Get',
 						description: 'Get all service ticket notes',
 						routing: {
 							request: {
@@ -104,7 +104,7 @@ export class Connectwise implements INodeType {
 					{
 						name: 'Add',
 						value: 'add',
-						action: 'add',
+						action: 'Add',
 						description: 'Add a ticket note',
 						routing: {
 							request: {
@@ -121,11 +121,10 @@ export class Connectwise implements INodeType {
 				displayName: 'Conditions',
 				name: 'conditions',
 				type: 'string',
-				required: false,
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -143,11 +142,10 @@ export class Connectwise implements INodeType {
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				required: false,
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -162,14 +160,13 @@ export class Connectwise implements INodeType {
 				default: '',
 			},
 			{
-				displayName: 'Page Id',
+				displayName: 'Page ID',
 				name: 'pageId',
 				type: 'number',
-				required: false,
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -181,17 +178,16 @@ export class Connectwise implements INodeType {
 						},
 					},
 				},
-				default: '0',
+				default: null,
 			},
 			{
 				displayName: 'Page Size',
 				name: 'pageSize',
 				type: 'number',
-				required: false,
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -203,10 +199,10 @@ export class Connectwise implements INodeType {
 						},
 					},
 				},
-				default: '1000',
+				default: 1000,
 			},
 			{
-				displayName: 'Service Ticket Id',
+				displayName: 'Service Ticket ID',
 				name: 'serviceTicketId',
 				type: 'number',
 				required: true,
@@ -223,13 +219,13 @@ export class Connectwise implements INodeType {
 						url: '=/service/tickets/{{ $value }}/notes',
 					},
 				},
-				default: '',
+				default: null,
 			},
 			{
 				displayName: 'Internal Only',
 				name: 'internalFlag',
 				type: 'boolean',
-				description: 'Only visible for internal users',
+				description: 'Whether it is visible only to internal users',
 				displayOptions: {
 					show: {
 						resource: ['serviceTicketNotes'],
@@ -253,7 +249,6 @@ export class Connectwise implements INodeType {
 				typeOptions: {
 					rows: 4,
 				},
-				description: 'Description',
 				displayOptions: {
 					show: {
 						resource: ['serviceTicketNotes'],

@@ -6,17 +6,20 @@ import type {
 } from 'n8n-workflow';
 
 export class ConnectwiseApi implements ICredentialType {
-	name = 'ConnectwiseApi';
+	name = 'connectwiseApi';
 
 	displayName = 'Connectwise API';
 
-	documentationUrl = 'httpRequest';
+	documentationUrl = 'https://github.com/itlocker/n8n-connectwise/blob/master/README.md';
 
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key (Base64 Encoded)',
 			name: 'apiKey',
 			type: 'string',
+			typeOptions: {
+				password: true,
+			},
 			default: '',
 			required: true,
 		},
