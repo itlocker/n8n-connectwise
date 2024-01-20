@@ -2,7 +2,7 @@
 
 # n8n-nodes-connectwise
 
-This repo contains a node which will provide access to Connectwise PSA.
+This repo contains a node which will provide access to Resource Guru.
 
 ## Using this community node
 
