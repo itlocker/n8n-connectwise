@@ -223,7 +223,7 @@ export class Connectwise implements INodeType {
 						url: '=/service/tickets/{{ $value }}/notes',
 					},
 				},
-				default: '1000',
+				default: '',
 			},
 			{
 				displayName: 'Internal Only',

@@ -210,7 +210,7 @@ class Connectwise {
                             url: '=/service/tickets/{{ $value }}/notes',
                         },
                     },
-                    default: '1000',
+                    default: '',
                 },
                 {
                     displayName: 'Internal Only',
