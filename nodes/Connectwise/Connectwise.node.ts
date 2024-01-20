@@ -125,7 +125,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies'],
+						resource: ['companies', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -147,7 +147,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies'],
+						resource: ['companies', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -169,7 +169,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies'],
+						resource: ['companies', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},
@@ -191,7 +191,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['companies'],
+						resource: ['companies', 'serviceTicketNotes'],
 						operation: ['get'],
 					},
 				},

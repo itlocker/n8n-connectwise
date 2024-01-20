@@ -117,7 +117,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies'],
+                            resource: ['companies', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -138,7 +138,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies'],
+                            resource: ['companies', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -159,7 +159,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies'],
+                            resource: ['companies', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
@@ -180,7 +180,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['companies'],
+                            resource: ['companies', 'serviceTicketNotes'],
                             operation: ['get'],
                         },
                     },
