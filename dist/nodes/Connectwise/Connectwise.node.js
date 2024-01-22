@@ -103,7 +103,6 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'POST',
-                                    url: '/service/tickets/',
                                 },
                             },
                         },

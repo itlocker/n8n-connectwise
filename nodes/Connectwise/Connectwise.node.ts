@@ -98,7 +98,6 @@ export class Connectwise implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								// url: '/service/tickets/',
 							},
 						},
 					},
@@ -110,7 +109,6 @@ export class Connectwise implements INodeType {
 						routing: {
 							request: {
 								method: 'POST',
-								url: '/service/tickets/',
 							},
 						},
 					},
