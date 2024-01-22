@@ -80,7 +80,7 @@ class Connectwise {
                     noDataExpression: true,
                     displayOptions: {
                         show: {
-                            resource: ['serviceTicketNotes'],
+                            resource: ['serviceTicketNote'],
                         },
                     },
                     options: [
@@ -92,6 +92,7 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'GET',
+                                    url: '/service/tickets/',
                                 },
                             },
                         },
@@ -103,6 +104,7 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'POST',
+                                    url: '/service/tickets/',
                                 },
                             },
                         },
@@ -116,7 +118,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNote'],
                             operation: ['get'],
                         },
                     },
@@ -136,7 +138,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNote'],
                             operation: ['get'],
                         },
                     },
@@ -156,7 +158,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNote'],
                             operation: ['get'],
                         },
                     },
@@ -176,7 +178,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNotes'],
+                            resource: ['company', 'serviceTicketNote'],
                             operation: ['get'],
                         },
                     },
@@ -197,7 +199,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['serviceTicketNotes'],
+                            resource: ['serviceTicketNote'],
                             operation: ['get', 'add'],
                         },
                     },
@@ -215,7 +217,7 @@ class Connectwise {
                     description: 'Whether it is visible only to internal users',
                     displayOptions: {
                         show: {
-                            resource: ['serviceTicketNotes'],
+                            resource: ['serviceTicketNote'],
                             operation: ['add'],
                         },
                     },
@@ -238,7 +240,7 @@ class Connectwise {
                     },
                     displayOptions: {
                         show: {
-                            resource: ['serviceTicketNotes'],
+                            resource: ['serviceTicketNote'],
                             operation: ['add'],
                         },
                     },
