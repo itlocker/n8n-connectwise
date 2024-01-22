@@ -12,7 +12,7 @@ class Connectwise {
             subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
             description: 'Get and Set information in Connectwise',
             defaults: {
-                name: 'connectwise',
+                name: 'Connectwise',
             },
             inputs: ['main'],
             outputs: ['main'],

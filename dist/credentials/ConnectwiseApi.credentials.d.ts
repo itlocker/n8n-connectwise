@@ -2,6 +2,7 @@ import type { ICredentialType, INodeProperties, IAuthenticateGeneric, ICredentia
 export declare class ConnectwiseApi implements ICredentialType {
     name: string;
     displayName: string;
+    icon: string;
     documentationUrl: string;
     properties: INodeProperties[];
     authenticate: IAuthenticateGeneric;

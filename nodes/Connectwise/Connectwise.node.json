@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.connectwise",
+	"node": "n8n-nodes-base.connectwiseApi",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous"],

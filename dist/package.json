@@ -1,6 +1,6 @@
 {
     "name": "@itlocker/n8n-nodes-connectwise",
-    "version": "0.2.1",
+    "version": "0.2.24",
     "description": "n8n node - Connectwise",
     "keywords": [
         "n8n-community-node-package"
