@@ -285,7 +285,7 @@ class Connectwise {
                     routing: {
                         request: {
                             body: {
-                                '{{ $value }}': true,
+                                internalAnalysisFlag: true,
                             },
                         },
                     },

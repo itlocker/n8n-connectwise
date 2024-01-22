@@ -314,7 +314,7 @@ export class Connectwise implements INodeType {
 					request: {
 						// You've already set up the URL. qs appends the value of the field as a query string
 						body: {
-							'{{ $value }}': true,
+							internalAnalysisFlag: true,
 						},
 					},
 				},
