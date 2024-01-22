@@ -292,26 +292,6 @@ class Connectwise {
                     default: 'internalAnalysisFlag',
                 },
                 {
-                    displayName: 'Internal Only',
-                    name: 'internalFlag',
-                    type: 'boolean',
-                    description: 'Whether it is visible only to internal users',
-                    displayOptions: {
-                        show: {
-                            resource: ['serviceTicketNote'],
-                            operation: ['add'],
-                        },
-                    },
-                    routing: {
-                        request: {
-                            body: {
-                                internalFlag: '={{ $value }}',
-                            },
-                        },
-                    },
-                    default: true,
-                },
-                {
                     displayName: 'Description',
                     name: 'description',
                     type: 'string',
