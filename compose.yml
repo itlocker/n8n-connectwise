@@ -1,0 +1,16 @@
+version: '3'
+services:
+  n8n:
+    image: 'n8nio/n8n:latest'
+    ports:
+      - '5678:5678'
+    volumes:
+      - 'n8n-data:/home/node/.n8n'
+    networks:
+      - n8n
+networks:
+  n8n:
+    driver: bridge
+volumes:
+  n8n-data:
+    driver: local

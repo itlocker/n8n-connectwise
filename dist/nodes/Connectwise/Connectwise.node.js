@@ -5,20 +5,20 @@ class Connectwise {
     constructor() {
         this.description = {
             displayName: 'Connectwise',
-            name: 'Connectwise',
+            name: 'connectwise',
             icon: 'file:connectwise.svg',
             group: ['transform'],
             version: 1,
             subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
             description: 'Get and Set information in Connectwise',
             defaults: {
-                name: 'Connectwise',
+                name: 'connectwise',
             },
             inputs: ['main'],
             outputs: ['main'],
             credentials: [
                 {
-                    name: 'ConnectwiseApi',
+                    name: 'connectwiseApi',
                     required: true,
                 },
             ],
