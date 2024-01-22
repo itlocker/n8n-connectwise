@@ -293,35 +293,14 @@ export class Connectwise implements INodeType {
 					{
 						name: 'Internal Analysis',
 						value: 'internalAnalysisFlag',
-						routing: {
-							request: {
-								body: {
-									internalAnalysisFlag: true,
-								},
-							},
-						},
 					},
 					{
 						name: 'Detail Description',
 						value: 'detailDescriptionFlag',
-						routing: {
-							request: {
-								body: {
-									detailDescriptionFlag: true,
-								},
-							},
-						},
 					},
 					{
 						name: 'Resolution',
 						value: 'resolutionFlag',
-						routing: {
-							request: {
-								body: {
-									resolutionFlag: true,
-								},
-							},
-						},
 					},
 				],
 				default: [],
@@ -330,6 +309,13 @@ export class Connectwise implements INodeType {
 					show: {
 						resource: ['serviceTicketNote'],
 						operation: ['add'],
+					},
+				},
+				routing: {
+					request: {
+						body: {
+							'={{$value}}': true,
+						},
 					},
 				},
 			},
