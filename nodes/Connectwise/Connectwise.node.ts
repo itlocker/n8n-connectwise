@@ -151,6 +151,9 @@ export class Connectwise implements INodeType {
 						routing: {
 							request: {
 								method: 'POST',
+								body: {
+									internalAnalysisFlag: true,
+								},
 							},
 						},
 					},
@@ -278,104 +281,68 @@ export class Connectwise implements INodeType {
 				},
 				routing: {
 					request: {
-						// You've already set up the URL. qs appends the value of the field as a query string
 						url: '=/service/tickets/{{ $value }}/notes',
 					},
 				},
 				default: null,
 			},
-			{
-				displayName: 'Service Ticket Note Type',
-				name: 'serviceTicketNoteType',
-				type: 'multiOptions',
-				required: true,
-				options: [
-					{
-						name: 'Internal Analysis',
-						value: 'internalAnalysisFlag',
-					},
-					{
-						name: 'Detail Description',
-						value: 'detailDescriptionFlag',
-					},
-					{
-						name: 'Resolution',
-						value: 'resolutionFlag',
-					},
-				],
-				default: [],
-				description: 'The events to be monitored',
-				displayOptions: {
-					show: {
-						resource: ['serviceTicketNote'],
-						operation: ['add'],
-					},
-				},
-				routing: {
-					request: {
-						body: {
-							'={{$value}}': true,
-						},
-					},
-				},
-			},
 
-			{
-				displayName: 'Service Ticket Type',
-				name: 'serviceTicketType',
-				type: 'options',
-				required: true,
-				options: [
-					{
-						name: 'Internal Analysis',
-						value: 'internalAnalysisFlag',
-					},
-					// {
-					// 	name: 'Detail Description',
-					// 	value: 'detailDescriptionFlag',
-					// },
-					// {
-					// 	name: 'Resolution',
-					// 	value: 'resolutionFlag',
-					// },
-				],
-				placeholder: '',
-				displayOptions: {
-					show: {
-						resource: ['serviceTicketNote'],
-						operation: ['add'],
-					},
-				},
-				routing: {
-					request: {
-						// You've already set up the URL. qs appends the value of the field as a query string
-						body: {
-							internalAnalysisFlag: true,
-						},
-					},
-				},
-				default: 'internalAnalysisFlag',
-			},
-			{
-				displayName: 'Internal Only',
-				name: 'internalFlag',
-				type: 'boolean',
-				description: 'Whether it is visible only to internal users',
-				displayOptions: {
-					show: {
-						resource: ['serviceTicketNote'],
-						operation: ['add'],
-					},
-				},
-				routing: {
-					request: {
-						body: {
-							internalFlag: '={{ $value }}',
-						},
-					},
-				},
-				default: true,
-			},
+			// {
+			// 	displayName: 'Service Ticket Type',
+			// 	name: 'serviceTicketType',
+			// 	type: 'options',
+			// 	required: true,
+			// 	options: [
+			// 		{
+			// 			name: 'Internal Analysis',
+			// 			value: 'internalAnalysisFlag',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Detail Description',
+			// 		// 	value: 'detailDescriptionFlag',
+			// 		// },
+			// 		// {
+			// 		// 	name: 'Resolution',
+			// 		// 	value: 'resolutionFlag',
+			// 		// },
+			// 	],
+			// 	placeholder: '',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['serviceTicketNote'],
+			// 			operation: ['add'],
+			// 		},
+			// 	},
+			// 	routing: {
+			// 		request: {
+			// 			// You've already set up the URL. qs appends the value of the field as a query string
+			// 			body: {
+			// 				internalAnalysisFlag: true,
+			// 			},
+			// 		},
+			// 	},
+			// 	default: 'internalAnalysisFlag',
+			// },
+			// {
+			// 	displayName: 'Internal Only',
+			// 	name: 'internalFlag',
+			// 	type: 'boolean',
+			// 	description: 'Whether it is visible only to internal users',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['serviceTicketNote'],
+			// 			operation: ['add'],
+			// 		},
+			// 	},
+			// 	routing: {
+			// 		request: {
+			// 			body: {
+			// 				internalFlag: '={{ $value }}',
+			// 			},
+			// 		},
+			// 	},
+			// 	default: true,
+			// },
 			{
 				displayName: 'Description',
 				name: 'description',
