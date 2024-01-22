@@ -285,61 +285,74 @@ export class Connectwise implements INodeType {
 				default: null,
 			},
 			{
-				displayName: 'Service Ticket Type',
-				name: 'serviceTicketType',
-				type: 'options',
+				displayName: 'Service Ticket Note Type',
+				name: 'serviceTicketNoteType',
+				type: 'multiOptions',
 				required: true,
 				options: [
 					{
 						name: 'Internal Analysis',
 						value: 'internalAnalysisFlag',
+						routing: {
+							request: {
+								body: {
+									internalAnalysisFlag: true,
+								},
+							},
+						},
 					},
-					// {
-					// 	name: 'Detail Description',
-					// 	value: 'detailDescriptionFlag',
-					// },
-					// {
-					// 	name: 'Resolution',
-					// 	value: 'resolutionFlag',
-					// },
+					{
+						name: 'Detail Description',
+						value: 'detailDescriptionFlag',
+						routing: {
+							request: {
+								body: {
+									detailDescriptionFlag: true,
+								},
+							},
+						},
+					},
+					{
+						name: 'Resolution',
+						value: 'resolutionFlag',
+						routing: {
+							request: {
+								body: {
+									resolutionFlag: true,
+								},
+							},
+						},
+					},
 				],
-				placeholder: '',
+				default: [],
+				description: 'The events to be monitored',
 				displayOptions: {
 					show: {
 						resource: ['serviceTicketNote'],
 						operation: ['add'],
 					},
 				},
-				routing: {
-					request: {
-						// You've already set up the URL. qs appends the value of the field as a query string
-						body: {
-							internalAnalysisFlag: true,
-						},
-					},
-				},
-				default: 'internalAnalysisFlag',
 			},
-			{
-				displayName: 'Internal Only',
-				name: 'internalFlag',
-				type: 'boolean',
-				description: 'Whether it is visible only to internal users',
-				displayOptions: {
-					show: {
-						resource: ['serviceTicketNote'],
-						operation: ['add'],
-					},
-				},
-				routing: {
-					request: {
-						body: {
-							internalFlag: '={{ $value }}',
-						},
-					},
-				},
-				default: true,
-			},
+			// {
+			// 	displayName: 'Internal Only',
+			// 	name: 'internalFlag',
+			// 	type: 'boolean',
+			// 	description: 'Whether it is visible only to internal users',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['serviceTicketNote'],
+			// 			operation: ['add'],
+			// 		},
+			// 	},
+			// 	routing: {
+			// 		request: {
+			// 			body: {
+			// 				internalFlag: '={{ $value }}',
+			// 			},
+			// 		},
+			// 	},
+			// 	default: true,
+			// },
 			{
 				displayName: 'Description',
 				name: 'description',
