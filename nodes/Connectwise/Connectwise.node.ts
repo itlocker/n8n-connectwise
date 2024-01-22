@@ -296,7 +296,7 @@ export class Connectwise implements INodeType {
 				routing: {
 					request: {
 						body: {
-							internalAnalysisFlag: true,
+							internalAnalysisFlag: '={{$value}}',
 						},
 					},
 				},
@@ -316,11 +316,11 @@ export class Connectwise implements INodeType {
 				routing: {
 					request: {
 						body: {
-							detailDescriptionFlag: true,
+							detailDescriptionFlag: '={{$value}}',
 						},
 					},
 				},
-				default: true,
+				default: false,
 			},
 			{
 				displayName: 'Resolution',
@@ -336,11 +336,11 @@ export class Connectwise implements INodeType {
 				routing: {
 					request: {
 						body: {
-							resolutionFlag: true,
+							resolutionFlag: '={{$value}}',
 						},
 					},
 				},
-				default: true,
+				default: false,
 			},
 			{
 				displayName: 'Description',

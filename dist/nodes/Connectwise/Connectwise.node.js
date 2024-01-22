@@ -270,7 +270,7 @@ class Connectwise {
                     routing: {
                         request: {
                             body: {
-                                internalAnalysisFlag: true,
+                                internalAnalysisFlag: '={{$value}}',
                             },
                         },
                     },
@@ -290,11 +290,11 @@ class Connectwise {
                     routing: {
                         request: {
                             body: {
-                                detailDescriptionFlag: true,
+                                detailDescriptionFlag: '={{$value}}',
                             },
                         },
                     },
-                    default: true,
+                    default: false,
                 },
                 {
                     displayName: 'Resolution',
@@ -310,11 +310,11 @@ class Connectwise {
                     routing: {
                         request: {
                             body: {
-                                resolutionFlag: true,
+                                resolutionFlag: '={{$value}}',
                             },
                         },
                     },
-                    default: true,
+                    default: false,
                 },
                 {
                     displayName: 'Description',
