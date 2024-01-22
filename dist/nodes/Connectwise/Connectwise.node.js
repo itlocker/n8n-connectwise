@@ -92,7 +92,6 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'GET',
-                                    url: '/service/tickets/',
                                 },
                             },
                         },

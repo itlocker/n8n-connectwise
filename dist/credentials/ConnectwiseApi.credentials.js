@@ -5,7 +5,6 @@ class ConnectwiseApi {
     constructor() {
         this.name = 'connectwiseApi';
         this.displayName = 'Connectwise API';
-        this.icon = 'file:connectwise.svg';
         this.documentationUrl = 'https://github.com/itlocker/n8n-connectwise/blob/master/README.md';
         this.properties = [
             {
