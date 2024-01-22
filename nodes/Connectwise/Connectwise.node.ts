@@ -294,14 +294,14 @@ export class Connectwise implements INodeType {
 						name: 'Internal Analysis',
 						value: 'internalAnalysisFlag',
 					},
-					{
-						name: 'Detail Description',
-						value: 'detailDescriptionFlag',
-					},
-					{
-						name: 'Resolution',
-						value: 'resolutionFlag',
-					},
+					// {
+					// 	name: 'Detail Description',
+					// 	value: 'detailDescriptionFlag',
+					// },
+					// {
+					// 	name: 'Resolution',
+					// 	value: 'resolutionFlag',
+					// },
 				],
 				placeholder: '',
 				displayOptions: {
@@ -314,32 +314,32 @@ export class Connectwise implements INodeType {
 					request: {
 						// You've already set up the URL. qs appends the value of the field as a query string
 						body: {
-							'={{ $value }}': true,
+							internalAnalysisFlag: true,
 						},
 					},
 				},
 				default: 'internalAnalysisFlag',
 			},
-			// {
-			// 	displayName: 'Internal Only',
-			// 	name: 'internalFlag',
-			// 	type: 'boolean',
-			// 	description: 'Whether it is visible only to internal users',
-			// 	displayOptions: {
-			// 		show: {
-			// 			resource: ['serviceTicketNote'],
-			// 			operation: ['add'],
-			// 		},
-			// 	},
-			// 	routing: {
-			// 		request: {
-			// 			body: {
-			// 				internalFlag: '={{ $value }}',
-			// 			},
-			// 		},
-			// 	},
-			// 	default: true,
-			// },
+			{
+				displayName: 'Internal Only',
+				name: 'internalFlag',
+				type: 'boolean',
+				description: 'Whether it is visible only to internal users',
+				displayOptions: {
+					show: {
+						resource: ['serviceTicketNote'],
+						operation: ['add'],
+					},
+				},
+				routing: {
+					request: {
+						body: {
+							internalFlag: '={{ $value }}',
+						},
+					},
+				},
+				default: true,
+			},
 			{
 				displayName: 'Description',
 				name: 'description',

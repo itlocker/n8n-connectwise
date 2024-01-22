@@ -266,14 +266,6 @@ class Connectwise {
                             name: 'Internal Analysis',
                             value: 'internalAnalysisFlag',
                         },
-                        {
-                            name: 'Detail Description',
-                            value: 'detailDescriptionFlag',
-                        },
-                        {
-                            name: 'Resolution',
-                            value: 'resolutionFlag',
-                        },
                     ],
                     placeholder: '',
                     displayOptions: {
@@ -285,11 +277,31 @@ class Connectwise {
                     routing: {
                         request: {
                             body: {
-                                '={{ $value }}': true,
+                                internalAnalysisFlag: true,
                             },
                         },
                     },
                     default: 'internalAnalysisFlag',
+                },
+                {
+                    displayName: 'Internal Only',
+                    name: 'internalFlag',
+                    type: 'boolean',
+                    description: 'Whether it is visible only to internal users',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                internalFlag: '={{ $value }}',
+                            },
+                        },
+                    },
+                    default: true,
                 },
                 {
                     displayName: 'Description',
