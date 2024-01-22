@@ -41,6 +41,10 @@ class Connectwise {
                             value: 'company',
                         },
                         {
+                            name: 'Service Ticket',
+                            value: 'serviceTicket',
+                        },
+                        {
                             name: 'Service Ticket Note',
                             value: 'serviceTicketNote',
                         },
@@ -72,6 +76,31 @@ class Connectwise {
                         },
                     ],
                     default: 'get',
+                },
+                {
+                    displayName: 'Operation',
+                    name: 'operation',
+                    type: 'options',
+                    noDataExpression: true,
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicket'],
+                        },
+                    },
+                    options: [
+                        {
+                            name: 'Show',
+                            value: 'show',
+                            action: 'Show',
+                            description: 'Show service ticket',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                },
+                            },
+                        },
+                    ],
+                    default: 'show',
                 },
                 {
                     displayName: 'Operation',
@@ -197,6 +226,25 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
+                            resource: ['serviceTicket'],
+                            operation: ['show'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            url: '=/service/tickets/{{ $value }}',
+                        },
+                    },
+                    default: null,
+                },
+                {
+                    displayName: 'Service Ticket ID',
+                    name: 'serviceTicketId',
+                    type: 'number',
+                    required: true,
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
                             resource: ['serviceTicketNote'],
                             operation: ['get', 'add'],
                         },
@@ -207,6 +255,41 @@ class Connectwise {
                         },
                     },
                     default: null,
+                },
+                {
+                    displayName: 'Service Ticket Type',
+                    name: 'serviceTicketId',
+                    type: 'options',
+                    required: true,
+                    options: [
+                        {
+                            name: 'internalAnalysisFlag',
+                            value: 'internalAnalysisFlag',
+                        },
+                        {
+                            name: 'detailDescriptionFlag',
+                            value: 'detailDescriptionFlag',
+                        },
+                        {
+                            name: 'resolutionFlag',
+                            value: 'resolutionFlag',
+                        },
+                    ],
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                '{{ $value }}': true,
+                            },
+                        },
+                    },
+                    default: 'internalAnalysisFlag',
                 },
                 {
                     displayName: 'Internal Only',

@@ -42,6 +42,10 @@ export class Connectwise implements INodeType {
 						value: 'company',
 					},
 					{
+						name: 'Service Ticket',
+						value: 'serviceTicket',
+					},
+					{
 						name: 'Service Ticket Note',
 						value: 'serviceTicketNote',
 					},
@@ -76,6 +80,44 @@ export class Connectwise implements INodeType {
 					},
 				],
 				default: 'get',
+			},
+
+			// Ticket
+			{
+				displayName: 'Operation',
+				name: 'operation',
+				type: 'options',
+				noDataExpression: true,
+				displayOptions: {
+					show: {
+						resource: ['serviceTicket'],
+					},
+				},
+				options: [
+					{
+						name: 'Show',
+						value: 'show',
+						action: 'Show',
+						description: 'Show service ticket',
+						routing: {
+							request: {
+								method: 'GET',
+							},
+						},
+					},
+					// {
+					// 	name: 'Add',
+					// 	value: 'add',
+					// 	action: 'Add',
+					// 	description: 'Add a ticket note',
+					// 	routing: {
+					// 		request: {
+					// 			method: 'POST',
+					// 		},
+					// 	},
+					// },
+				],
+				default: 'show',
 			},
 
 			// Ticket Notes
@@ -209,6 +251,27 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
+						resource: ['serviceTicket'],
+						operation: ['show'],
+					},
+				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						url: '=/service/tickets/{{ $value }}',
+					},
+				},
+				default: null,
+			},
+
+			{
+				displayName: 'Service Ticket ID',
+				name: 'serviceTicketId',
+				type: 'number',
+				required: true,
+				placeholder: '',
+				displayOptions: {
+					show: {
 						resource: ['serviceTicketNote'],
 						operation: ['get', 'add'],
 					},
@@ -220,6 +283,42 @@ export class Connectwise implements INodeType {
 					},
 				},
 				default: null,
+			},
+			{
+				displayName: 'Service Ticket Type',
+				name: 'serviceTicketId',
+				type: 'options',
+				required: true,
+				options: [
+					{
+						name: 'internalAnalysisFlag',
+						value: 'internalAnalysisFlag',
+					},
+					{
+						name: 'detailDescriptionFlag',
+						value: 'detailDescriptionFlag',
+					},
+					{
+						name: 'resolutionFlag',
+						value: 'resolutionFlag',
+					},
+				],
+				placeholder: '',
+				displayOptions: {
+					show: {
+						resource: ['serviceTicketNote'],
+						operation: ['add'],
+					},
+				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						body: {
+							'{{ $value }}': true,
+						},
+					},
+				},
+				default: 'internalAnalysisFlag',
 			},
 			{
 				displayName: 'Internal Only',
