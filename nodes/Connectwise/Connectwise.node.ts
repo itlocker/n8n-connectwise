@@ -86,7 +86,7 @@ export class Connectwise implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: ['serviceTicketNotes'],
+						resource: ['serviceTicketNote'],
 					},
 				},
 				options: [
@@ -124,7 +124,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNote'],
 						operation: ['get'],
 					},
 				},
@@ -145,7 +145,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNote'],
 						operation: ['get'],
 					},
 				},
@@ -166,7 +166,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNote'],
 						operation: ['get'],
 					},
 				},
@@ -187,7 +187,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNotes'],
+						resource: ['company', 'serviceTicketNote'],
 						operation: ['get'],
 					},
 				},
@@ -209,7 +209,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['serviceTicketNotes'],
+						resource: ['serviceTicketNote'],
 						operation: ['get', 'add'],
 					},
 				},
@@ -228,7 +228,7 @@ export class Connectwise implements INodeType {
 				description: 'Whether it is visible only to internal users',
 				displayOptions: {
 					show: {
-						resource: ['serviceTicketNotes'],
+						resource: ['serviceTicketNote'],
 						operation: ['add'],
 					},
 				},
@@ -251,7 +251,7 @@ export class Connectwise implements INodeType {
 				},
 				displayOptions: {
 					show: {
-						resource: ['serviceTicketNotes'],
+						resource: ['serviceTicketNote'],
 						operation: ['add'],
 					},
 				},
