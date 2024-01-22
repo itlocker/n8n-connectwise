@@ -132,9 +132,6 @@ class Connectwise {
                             routing: {
                                 request: {
                                     method: 'POST',
-                                    body: {
-                                        internalAnalysisFlag: true,
-                                    },
                                 },
                             },
                         },
@@ -258,6 +255,66 @@ class Connectwise {
                         },
                     },
                     default: null,
+                },
+                {
+                    displayName: 'Internal Analysis',
+                    name: 'internalAnalysisFlag',
+                    type: 'boolean',
+                    description: 'Whether it is visible only to internal users',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                internalAnalysisFlag: true,
+                            },
+                        },
+                    },
+                    default: true,
+                },
+                {
+                    displayName: 'Detail Description',
+                    name: 'detailDescriptionFlag',
+                    type: 'boolean',
+                    description: 'Whether it includes a detailed description',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                detailDescriptionFlag: true,
+                            },
+                        },
+                    },
+                    default: true,
+                },
+                {
+                    displayName: 'Resolution',
+                    name: 'resolutionFlag',
+                    type: 'boolean',
+                    description: 'Whether it includes the resolution detail',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                resolutionFlag: true,
+                            },
+                        },
+                    },
+                    default: true,
                 },
                 {
                     displayName: 'Description',
