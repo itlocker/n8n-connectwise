@@ -145,7 +145,7 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNote'],
+                            resource: ['company', 'serviceTicket', 'serviceTicketNote'],
                             operation: ['get'],
                         },
                     },
@@ -165,8 +165,8 @@ class Connectwise {
                     placeholder: '',
                     displayOptions: {
                         show: {
-                            resource: ['company', 'serviceTicketNote'],
-                            operation: ['get'],
+                            resource: ['company', 'serviceTicket', 'serviceTicketNote'],
+                            operation: ['get', 'show'],
                         },
                     },
                     routing: {
@@ -258,20 +258,20 @@ class Connectwise {
                 },
                 {
                     displayName: 'Service Ticket Type',
-                    name: 'serviceTicketId',
+                    name: 'serviceTicketType',
                     type: 'options',
                     required: true,
                     options: [
                         {
-                            name: 'internalAnalysisFlag',
+                            name: 'Internal Analysis',
                             value: 'internalAnalysisFlag',
                         },
                         {
-                            name: 'detailDescriptionFlag',
+                            name: 'Detail Description',
                             value: 'detailDescriptionFlag',
                         },
                         {
-                            name: 'resolutionFlag',
+                            name: 'Resolution',
                             value: 'resolutionFlag',
                         },
                     ],

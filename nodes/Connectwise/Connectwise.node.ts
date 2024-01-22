@@ -166,7 +166,7 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNote'],
+						resource: ['company', 'serviceTicket', 'serviceTicketNote'],
 						operation: ['get'],
 					},
 				},
@@ -187,8 +187,8 @@ export class Connectwise implements INodeType {
 				placeholder: '',
 				displayOptions: {
 					show: {
-						resource: ['company', 'serviceTicketNote'],
-						operation: ['get'],
+						resource: ['company', 'serviceTicket', 'serviceTicketNote'],
+						operation: ['get', 'show'],
 					},
 				},
 				routing: {
@@ -286,20 +286,20 @@ export class Connectwise implements INodeType {
 			},
 			{
 				displayName: 'Service Ticket Type',
-				name: 'serviceTicketId',
+				name: 'serviceTicketType',
 				type: 'options',
 				required: true,
 				options: [
 					{
-						name: 'internalAnalysisFlag',
+						name: 'Internal Analysis',
 						value: 'internalAnalysisFlag',
 					},
 					{
-						name: 'detailDescriptionFlag',
+						name: 'Detail Description',
 						value: 'detailDescriptionFlag',
 					},
 					{
-						name: 'resolutionFlag',
+						name: 'Resolution',
 						value: 'resolutionFlag',
 					},
 				],
