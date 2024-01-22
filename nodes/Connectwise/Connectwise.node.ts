@@ -333,6 +333,43 @@ export class Connectwise implements INodeType {
 					},
 				},
 			},
+
+			{
+				displayName: 'Service Ticket Type',
+				name: 'serviceTicketType',
+				type: 'options',
+				required: true,
+				options: [
+					{
+						name: 'Internal Analysis',
+						value: 'internalAnalysisFlag',
+					},
+					// {
+					// 	name: 'Detail Description',
+					// 	value: 'detailDescriptionFlag',
+					// },
+					// {
+					// 	name: 'Resolution',
+					// 	value: 'resolutionFlag',
+					// },
+				],
+				placeholder: '',
+				displayOptions: {
+					show: {
+						resource: ['serviceTicketNote'],
+						operation: ['add'],
+					},
+				},
+				routing: {
+					request: {
+						// You've already set up the URL. qs appends the value of the field as a query string
+						body: {
+							internalAnalysisFlag: true,
+						},
+					},
+				},
+				default: 'internalAnalysisFlag',
+			},
 			{
 				displayName: 'Internal Only',
 				name: 'internalFlag',

@@ -306,6 +306,33 @@ class Connectwise {
                     },
                 },
                 {
+                    displayName: 'Service Ticket Type',
+                    name: 'serviceTicketType',
+                    type: 'options',
+                    required: true,
+                    options: [
+                        {
+                            name: 'Internal Analysis',
+                            value: 'internalAnalysisFlag',
+                        },
+                    ],
+                    placeholder: '',
+                    displayOptions: {
+                        show: {
+                            resource: ['serviceTicketNote'],
+                            operation: ['add'],
+                        },
+                    },
+                    routing: {
+                        request: {
+                            body: {
+                                internalAnalysisFlag: true,
+                            },
+                        },
+                    },
+                    default: 'internalAnalysisFlag',
+                },
+                {
                     displayName: 'Internal Only',
                     name: 'internalFlag',
                     type: 'boolean',
